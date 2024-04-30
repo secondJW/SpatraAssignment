@@ -3,6 +3,8 @@ public class App {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         String input="";
+        int index=0;
+        int[] arr=new int[10];
 
         while(!input.equals("exit")) {
             System.out.println("첫 번째 숫자를 입력하세요");
@@ -14,6 +16,7 @@ public class App {
             char sign = sc.nextLine().charAt(0);
 
             int result = 0;
+
 
             switch (sign) {
                 case '+':
@@ -34,6 +37,8 @@ public class App {
                 default:
                     System.out.println("다시 입력");
             }
+            arr[index]=result;
+            index++;
             System.out.println("결과: " + result);
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             input=sc.nextLine();
