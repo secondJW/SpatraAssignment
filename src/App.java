@@ -2,11 +2,12 @@ import java.util.*;
 public class App {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        String input="";
+        String input1="";
+        String input2="";
         //int index=0;
         Stack<Integer> stackInt=new Stack<>();
 
-        while(!input.equals("exit")) {
+        while(!input2.equals("exit")) {
             System.out.println("첫 번째 숫자를 입력하세요");
             int firstNum = sc.nextInt();
             System.out.println("두 번째 숫자를 입력하세요");
@@ -37,14 +38,17 @@ public class App {
                 default:
                     System.out.println("다시 입력");
             }
-            if(stackInt.size()>10){
-                stackInt.pop();
-            }
             stackInt.push(result);
            // index++;
             System.out.println("결과: " + result);
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (reomve 입력 시 삭제)");
+            input1=sc.nextLine();
+
+            if(input1.equals("remove")){
+                stackInt.pop();
+            }
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-            input=sc.nextLine();
+            input2=sc.nextLine();
         }
     }
 }
