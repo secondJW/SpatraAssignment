@@ -10,5 +10,22 @@ public class App {
         System.out.println("사칙연산 기호를 입력하세요");
         char sign = sc.nextLine().charAt(0);
 
+        int result=0;
+
+        switch (sign){
+            case '+': result=firstNum+secondNum;
+            break;
+            case '-': result=firstNum-secondNum;
+            break;
+            case '*': result=firstNum*secondNum;
+            break;
+            case '/':result=firstNum/secondNum;
+            break;
+            case '%':result=firstNum%secondNum;
+            break;
+            default:
+                System.out.println("다시 입력");
+        }
+        System.out.println("결과: " + result);
     }
 }
