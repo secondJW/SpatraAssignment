@@ -3,7 +3,7 @@ import java.util.Stack;
 public class Calculator {
     private int result;
     Stack<Integer> stackInt = new Stack<>();
-    public Stack<Integer> getResult(){
+    public Stack<Integer> getResult(){  //
         return stackInt;
     }
 
@@ -11,11 +11,12 @@ public class Calculator {
         this.stackInt=stackInt;
     }
 
+    public void removeResult(){
+        stackInt.pop();
+    }
     public double calculate(int firstNum, int secondNum, char sign){
-        //level2-1
         result=0;
         try {
-
             switch (sign) {
                 case '+'-> result = firstNum + secondNum;
                 case '-'-> result = firstNum - secondNum;
