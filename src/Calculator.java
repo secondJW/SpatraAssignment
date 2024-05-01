@@ -2,7 +2,11 @@ import java.util.Stack;
 
 public class Calculator {
     private int result;
-    Stack<Integer> stackInt = new Stack<>();
+    Stack<Integer> stackInt;
+
+    Calculator(){
+         stackInt= new Stack<>();
+    }
     public Stack<Integer> getResult(){  //
         return stackInt;
     }
