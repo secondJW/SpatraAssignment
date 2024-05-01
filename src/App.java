@@ -5,7 +5,9 @@ public class App {
         String input1="";
         String input2="";
         String input3="";
-        //int index=0;
+
+        Calculator cal=new Calculator();
+
         Stack<Integer> stackInt=new Stack<>();
 
         while(!input2.equals("exit")) {
@@ -16,42 +18,20 @@ public class App {
             sc.nextLine(); //nextInt()가 남겨뒀던 개행(\n)을 가져옴
             System.out.println("사칙연산 기호를 입력하세요");
             char sign = sc.nextLine().charAt(0);
+            cal.calculate(firstNum,secondNum,sign);
 
-            int result = 0;
-
-
-            switch (sign) {
-                case '+':
-                    result = firstNum + secondNum;
-                    break;
-                case '-':
-                    result = firstNum - secondNum;
-                    break;
-                case '*':
-                    result = firstNum * secondNum;
-                    break;
-                case '/':
-                    result = firstNum / secondNum;
-                    break;
-                case '%':
-                    result = firstNum % secondNum;
-                    break;
-                default:
-                    System.out.println("다시 입력");
-            }
-            stackInt.push(result);
-           // index++;
-            System.out.println("결과: " + result);
+            stackInt.push(cal.result);
+            // index++;
+            System.out.println("결과: " + cal.result);
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (reomve 입력 시 삭제)");
             input1=sc.nextLine();
-
             if(input1.equals("remove")){
                 stackInt.pop();
             }
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             input3=sc.nextLine();
             if(input3.equals("inquiry")){
-                    System.out.println(stackInt);
+                System.out.println(stackInt);
             }
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             input2=sc.nextLine();
