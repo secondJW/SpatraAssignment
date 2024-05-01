@@ -14,6 +14,9 @@ public class Calculator {
     public void removeResult(){
         stackInt.pop();
     }
+    public void inquiryResult(){
+        System.out.println(stackInt);
+    }
     public double calculate(int firstNum, int secondNum, char sign){
         result=0;
         try {
